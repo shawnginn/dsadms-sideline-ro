@@ -1,0 +1,24 @@
+# Local Environment Secrets (NEVER COMMIT)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Node & Build Artifacts
+node_modules/
+/.next/
+/out/
+/build/
+/dist/
+
+# System & Local Logs
+.DS_Store
+*.pem
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local Database & Cache
+.vercel
