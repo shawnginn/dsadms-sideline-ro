@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 export default function SideLineROLanding() {
   return (
@@ -22,12 +22,12 @@ export default function SideLineROLanding() {
       <section className="max-w-5xl mx-auto text-center px-6 pt-20 pb-16">
         <div className="inline-flex items-center space-x-2 bg-slate-900 border border-slate-800 rounded-full px-4 py-1.5 text-xs text-cyan-400 font-semibold mb-8 uppercase tracking-widest">
           <span>CHEMICAL PRODUCTS</span>
-          <span>•</span>
+          <span>�</span>
           <span>REVENUE LEAKAGE SOLUTION</span>
         </div>
         
         <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
-          Stop Losing <span className="text-cyan-400">$3,000–$8,000 / Month</span> in Unbilled Off-DMS Specialty Products
+          Stop Losing <span className="text-cyan-400">$3,000�$8,000 / Month</span> in Unbilled Off-DMS Specialty Products
         </h1>
         
         <p className="text-slate-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
@@ -40,24 +40,24 @@ export default function SideLineROLanding() {
         {/* Pain Point Card */}
         <div className="bg-rose-950/20 border border-rose-900/40 rounded-2xl p-8 backdrop-blur-sm">
           <h2 className="text-sm font-bold text-rose-400 uppercase tracking-wider mb-6 flex items-center space-x-2">
-            <span>🚨</span>
+            <span>??</span>
             <span>THE AUTOMOTIVE REPAIR SHOP PAIN POINT</span>
           </h2>
           <ul className="space-y-4 text-slate-300">
             <li className="flex items-start space-x-3">
-              <span className="text-rose-500 font-bold">•</span>
+              <span className="text-rose-500 font-bold">�</span>
               <span>Specialty vendor invoices arrive on paper and get misplaced.</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-rose-500 font-bold">•</span>
+              <span className="text-rose-500 font-bold">�</span>
               <span>Parts managers enter wholesale costs manually, missing vendor price increases.</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-rose-500 font-bold">•</span>
+              <span className="text-rose-500 font-bold">�</span>
               <span>Service advisors forget to bill labor hours or attach chemical cans on customer ROs.</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-rose-500 font-bold">•</span>
+              <span className="text-rose-500 font-bold">�</span>
               <span>Shop door rate realization drops below target benchmarks with zero visibility.</span>
             </li>
           </ul>
@@ -66,24 +66,24 @@ export default function SideLineROLanding() {
         {/* Solution Card */}
         <div className="bg-emerald-950/20 border border-emerald-900/40 rounded-2xl p-8 backdrop-blur-sm">
           <h2 className="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-6 flex items-center space-x-2">
-            <span>💡</span>
+            <span>??</span>
             <span>THE SIDELINE RO SOLUTION</span>
           </h2>
           <ul className="space-y-4 text-slate-300">
             <li className="flex items-start space-x-3">
-              <span className="text-emerald-500 font-bold">•</span>
-              <span>Snap a photo of any distributor packing slip — We extract every line item instantly and update your inventory!</span>
+              <span className="text-emerald-500 font-bold">�</span>
+              <span>Snap a photo of any distributor packing slip � We extract every line item instantly and update your inventory!</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-emerald-500 font-bold">•</span>
+              <span className="text-emerald-500 font-bold">�</span>
               <span>Price change alerts highlight wholesale shifts so managers can update retail pricing and protect margins.</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-emerald-500 font-bold">•</span>
+              <span className="text-emerald-500 font-bold">�</span>
               <span>Op Code service bundles combine parts and labor into a single click or drag to active ROs.</span>
             </li>
             <li className="flex items-start space-x-3">
-              <span className="text-emerald-500 font-bold">•</span>
+              <span className="text-emerald-500 font-bold">�</span>
               <span>Auto-ordering calculates replacement needs up to max stock and dispatches Email/SMS orders to vendors.</span>
             </li>
           </ul>
@@ -108,19 +108,19 @@ export default function SideLineROLanding() {
               <hr className="border-slate-800 mb-6" />
               <ul className="space-y-3 text-sm text-slate-300 mb-8">
                 <li className="flex items-center space-x-2">
-                  <span className="text-cyan-400 font-bold">•</span>
+                  <span className="text-cyan-400 font-bold">�</span>
                   <span>Unlimited Camera Scans</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <span className="text-cyan-400 font-bold">•</span>
+                  <span className="text-cyan-400 font-bold">�</span>
                   <span>Unlimited Users & Advisor Access</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <span className="text-cyan-400 font-bold">•</span>
+                  <span className="text-cyan-400 font-bold">�</span>
                   <span>Price Change Protection & Door Rate Flags</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <span className="text-cyan-400 font-bold">•</span>
+                  <span className="text-cyan-400 font-bold">�</span>
                   <span>Vendor Auto-Ordering via Email & SMS</span>
                 </li>
               </ul>
@@ -133,7 +133,7 @@ export default function SideLineROLanding() {
           {/* Annual Plan */}
           <div className="bg-slate-900/80 border-2 border-cyan-500 rounded-2xl p-8 flex flex-col justify-between relative shadow-xl shadow-cyan-500/10">
             <div className="absolute -top-3.5 right-6 bg-cyan-500 text-slate-950 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
-              BEST VALUE • SAVE $20
+              BEST VALUE � SAVE $20
             </div>
             <div>
               <div className="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2">ANNUAL PLAN</div>
@@ -145,19 +145,19 @@ export default function SideLineROLanding() {
               <hr className="border-slate-800 mb-6" />
               <ul className="space-y-3 text-sm text-slate-300 mb-8">
                 <li className="flex items-center space-x-2">
-                  <span className="text-cyan-400 font-bold">•</span>
+                  <span className="text-cyan-400 font-bold">�</span>
                   <span>Everything in Monthly Plan</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <span className="text-cyan-400 font-bold">•</span>
+                  <span className="text-cyan-400 font-bold">�</span>
                   <span>Priority Vision Processing</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <span className="text-cyan-400 font-bold">•</span>
+                  <span className="text-cyan-400 font-bold">�</span>
                   <span>Dedicated Dealership Account Onboarding</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <span className="text-cyan-400 font-bold">•</span>
+                  <span className="text-cyan-400 font-bold">�</span>
                   <span>Multi-Location Audit Logs</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function SideLineROLanding() {
 
       {/* Footer */}
       <footer className="border-t border-slate-800/80 mt-20 py-8 text-center text-xs text-slate-500">
-        <p>© 2026 BELIZE AI Ecosystem • DSADMS SideLine RO. All rights reserved.</p>
+        <p>� 2026 BELIZE AI Ecosystem � DSADMS SideLine RO. All rights reserved.</p>
       </footer>
     </div>
   );
