@@ -27,7 +27,7 @@ export default function SideLineROLanding() {
         </div>
         
         <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
-          Stop Losing <span className="text-cyan-400">,000–,000 / Month</span> in Unbilled Off-DMS Specialty Products
+          Stop Losing <span className="text-cyan-400">$3,000–$8,000 / Month</span> in Unbilled Off-DMS Specialty Products
         </h1>
         
         <p className="text-slate-400 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
@@ -101,7 +101,7 @@ export default function SideLineROLanding() {
             <div>
               <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">MONTHLY PLAN</div>
               <div className="flex items-baseline space-x-1 mb-2">
-                <span className="text-4xl font-extrabold text-white">.99</span>
+                <span className="text-4xl font-extrabold text-white">$9.99</span>
                 <span className="text-slate-400 text-sm">/ month</span>
               </div>
               <p className="text-slate-400 text-xs mb-6">Flexible month-to-month subscription. Cancel anytime.</p>
@@ -126,22 +126,22 @@ export default function SideLineROLanding() {
               </ul>
             </div>
             <button className="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-lg transition-colors">
-              Subscribe Monthly (.99/mo)
+              Subscribe Monthly ($9.99/mo)
             </button>
           </div>
 
           {/* Annual Plan */}
           <div className="bg-slate-900/80 border-2 border-cyan-500 rounded-2xl p-8 flex flex-col justify-between relative shadow-xl shadow-cyan-500/10">
             <div className="absolute -top-3.5 right-6 bg-cyan-500 text-slate-950 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
-              BEST VALUE • SAVE 
+              BEST VALUE • SAVE $20
             </div>
             <div>
               <div className="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2">ANNUAL PLAN</div>
               <div className="flex items-baseline space-x-1 mb-2">
-                <span className="text-4xl font-extrabold text-white">.99</span>
+                <span className="text-4xl font-extrabold text-white">$99.99</span>
                 <span className="text-slate-400 text-sm">/ year</span>
               </div>
-              <p className="text-cyan-400 text-xs font-semibold mb-6">Includes 2 months free (.33/mo effective).</p>
+              <p className="text-cyan-400 text-xs font-semibold mb-6">Includes 2 months free ($8.33/mo effective).</p>
               <hr className="border-slate-800 mb-6" />
               <ul className="space-y-3 text-sm text-slate-300 mb-8">
                 <li className="flex items-center space-x-2">
@@ -163,7 +163,7 @@ export default function SideLineROLanding() {
               </ul>
             </div>
             <button className="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-3 rounded-lg transition-colors shadow-lg shadow-cyan-500/20">
-              Subscribe Annual (.99/yr)
+              Subscribe Annual ($99.99/yr)
             </button>
           </div>
         </div>
