@@ -91,11 +91,16 @@ interface BilledROItem {
   timestamp: string;
 }
 
-export default function SideLineApp() {
-  // NAVIGATION VIEW MODE: 'marketing' | 'login' | 'dashboard'
-  const [viewMode, setViewMode] = useState<'marketing' | 'login' | 'dashboard'>('marketing');
+// 3 PILOT LOCATIONS DATABASE
+const PILOT_LOCATIONS: Record<string, LocationTenant> = {
+  'loc-001': { id: 'loc-001', name: 'SideLine Auto Group (Main)', email: 'admin@sidelineauto.com', phone: '(555) 019-2834', address: '400 Dealership Way', subscriptionStatus: 'trial_bypass', subscriptionPlan: 'yearly', targetDoorRate: 180.00, avgTechWage: 35.00, targetPartsMargin: 55.0, targetLaborGp: 65.0 },
+  'loc-pilot-1': { id: 'loc-pilot-1', name: 'Pilot Dealership #1 (Metro)', email: 'pilot1@dsadms.com', phone: '(555) 111-2222', address: '100 Metro Auto Mall', subscriptionStatus: 'trial_bypass', subscriptionPlan: 'yearly', targetDoorRate: 175.00, avgTechWage: 34.00, targetPartsMargin: 52.0, targetLaborGp: 60.0 },
+  'loc-pilot-2': { id: 'loc-pilot-2', name: 'Pilot Dealership #2 (West)', email: 'pilot2@dsadms.com', phone: '(555) 333-4444', address: '250 Westside Drive', subscriptionStatus: 'trial_bypass', subscriptionPlan: 'yearly', targetDoorRate: 185.00, avgTechWage: 38.00, targetPartsMargin: 55.0, targetLaborGp: 65.0 },
+  'loc-pilot-3': { id: 'loc-pilot-3', name: 'Pilot Dealership #3 (East)', email: 'pilot3@dsadms.com', phone: '(555) 555-6666', address: '500 East Commerce Way', subscriptionStatus: 'trial_bypass', subscriptionPlan: 'yearly', targetDoorRate: 190.00, avgTechWage: 40.00, targetPartsMargin: 58.0, targetLaborGp: 68.0 },
+};
 
-  // RANDOMIZED QUOTE STATE
+export default function SideLineApp() {
+  const [viewMode, setViewMode] = useState<'marketing' | 'login' | 'dashboard'>('marketing');
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState<number>(0);
 
   useEffect(() => {
@@ -108,54 +113,36 @@ export default function SideLineApp() {
     setCurrentQuoteIndex(nextIdx);
   };
 
-  // AUTHENTICATION & MULTI-TENANT STATE
-  const [authEmail, setAuthEmail] = useState<string>('admin@sidelineauto.com');
+  const [authEmail, setAuthEmail] = useState<string>('shawn@dsaindustriesltd.com');
   const [authPassword, setAuthPassword] = useState<string>('••••••••');
   const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState<boolean>(false);
   const [resetEmail, setResetEmail] = useState<string>('');
   const [resetSentNotice, setResetSentNotice] = useState<string | null>(null);
 
-  // LEGAL & CONTACT MODALS
   const [activeLegalModal, setActiveLegalModal] = useState<'terms' | 'refund' | 'privacy' | 'contact' | null>(null);
-
-  // LOGGED-IN USER & TENANT CONTEXT
   const [currentUser, setCurrentUser] = useState<UserAccount | null>(null);
-  const [location, setLocation] = useState<LocationTenant>({
-    id: 'loc-001',
-    name: 'SideLine Auto Group',
-    email: 'admin@sidelineauto.com',
-    phone: '(555) 019-2834',
-    address: '400 Dealership Way, Suite 100',
-    subscriptionStatus: 'trial_bypass',
-    subscriptionPlan: 'yearly',
-    targetDoorRate: 180.00,
-    avgTechWage: 35.00,
-    targetPartsMargin: 55.0,
-    targetLaborGp: 65.0
-  });
+  const [location, setLocation] = useState<LocationTenant>(PILOT_LOCATIONS['loc-001']);
 
   const isAdmin = currentUser?.role === 'ADMIN';
-
-  // DASHBOARD NAVIGATION TABS
   const [activeTab, setActiveTab] = useState<'overview' | 'receiving' | 'sales' | 'vendors'>('receiving');
 
-  // USER MANAGEMENT
+  // USER ACCOUNTS WITH PRE-SEEDED PILOT ADMINS
   const [users, setUsers] = useState<UserAccount[]>([
-    { id: 'u1', name: 'Shawn Manager (Admin)', email: 'admin@sidelineauto.com', role: 'ADMIN', locationId: 'loc-001' },
-    { id: 'u2', name: 'Tech #12 (Parts)', email: 'tech12@sidelineauto.com', role: 'STANDARD', locationId: 'loc-001' },
-    { id: 'u3', name: 'Alex Advisor', email: 'alex@sidelineauto.com', role: 'STANDARD', locationId: 'loc-001' }
+    { id: 'u1', name: 'Shawn Manager (Master Admin)', email: 'shawn@dsaindustriesltd.com', role: 'ADMIN', locationId: 'loc-001' },
+    { id: 'u-pilot-1', name: 'Pilot Store 1 Admin', email: 'pilot1@dsadms.com', role: 'ADMIN', locationId: 'loc-pilot-1' },
+    { id: 'u-pilot-2', name: 'Pilot Store 2 Admin', email: 'pilot2@dsadms.com', role: 'ADMIN', locationId: 'loc-pilot-2' },
+    { id: 'u-pilot-3', name: 'Pilot Store 3 Admin', email: 'pilot3@dsadms.com', role: 'ADMIN', locationId: 'loc-pilot-3' },
   ]);
+
   const [newUserName, setNewUserName] = useState('');
   const [newUserRole, setNewUserRole] = useState<'ADMIN' | 'STANDARD'>('STANDARD');
   const [newUserEmail, setNewUserEmail] = useState('');
 
-  // VENDOR DIRECTORY
   const [vendors, setVendors] = useState<Vendor[]>([
     { id: 'v1', locationId: 'loc-001', name: 'Wagonmaster Group Of Products', email: 'fulfillment@wagonmastergroup.com', phone: '(800) 555-0199', contactPerson: 'Dave Miller', autoOrderEnabled: true, orderMethod: 'Email' },
     { id: 'v2', locationId: 'loc-001', name: 'SunTek Protective Films', email: 'orders@suntek.com', phone: '(800) 555-0244', contactPerson: 'Sarah Jenkins', autoOrderEnabled: true, orderMethod: 'SMS' }
   ]);
 
-  // MASTER INVENTORY
   const [inventory, setInventory] = useState<InventoryItem[]>([
     { id: '1', locationId: 'loc-001', vendorName: 'Wagonmaster Group Of Products', opCode: 'OP-44K', pn: 'PN 20811', description: 'BG Platinum 44K Fuel Cleaner', qty: 12, maxStock: 24, lowStockThreshold: 5, unitCost: 28.50, previousCost: 25.00, priceChanged: true, retailPrice: 65.00, stdLaborHours: 0.2, stdLaborRate: 23.00, expectedQtyPerOp: 1, timestamp: new Date().toISOString() },
     { id: '2', locationId: 'loc-001', vendorName: 'Wagonmaster Group Of Products', opCode: 'OP-EPR', pn: 'PN 109', description: 'BG EPR Engine Performance', qty: 3, maxStock: 20, lowStockThreshold: 5, unitCost: 14.25, previousCost: 14.25, priceChanged: false, retailPrice: 28.00, stdLaborHours: 0.3, stdLaborRate: 18.00, expectedQtyPerOp: 1, timestamp: new Date().toISOString() },
@@ -163,12 +150,10 @@ export default function SideLineApp() {
     { id: '4', locationId: 'loc-001', vendorName: 'Wagonmaster Group Of Products', opCode: 'OP-DRIVELINE', pn: 'PN 306', description: 'BG Driveline Fluid Canister', qty: 9, maxStock: 15, lowStockThreshold: 5, unitCost: 19.00, previousCost: 17.50, priceChanged: true, retailPrice: 48.00, stdLaborHours: 0.5, stdLaborRate: 89.00, expectedQtyPerOp: 3, timestamp: new Date().toISOString() }
   ]);
 
-  // ACTIVE REPAIR ORDER
   const [roNumber, setRoNumber] = useState('RO-40291');
   const [techName, setTechName] = useState('Tech #12');
   const [roItems, setRoItems] = useState<BilledROItem[]>([]);
 
-  // SCANNER & MODAL STATES
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -182,17 +167,21 @@ export default function SideLineApp() {
   const [rectifyReason, setRectifyReason] = useState<string>('Physical Count Discrepancy');
   const [vendorOrderDigest, setVendorOrderDigest] = useState<{ vendor: Vendor; items: { item: InventoryItem; reorderQty: number }[] } | null>(null);
 
-  // AUTHENTICATION LOGIN HANDLER
+  // AUTHENTICATION LOGIN ROUTER FOR MULTI-TENANT STORE CONTEXTS
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    const foundUser = users.find(u => u.email.toLowerCase() === authEmail.toLowerCase()) || {
-      id: 'u-admin',
-      name: 'Shawn Manager (Admin)',
-      email: authEmail,
+    const cleanEmail = authEmail.trim().toLowerCase();
+    const foundUser = users.find(u => u.email.toLowerCase() === cleanEmail) || {
+      id: 'u-master',
+      name: 'Shawn Manager (Master Admin)',
+      email: cleanEmail,
       role: 'ADMIN',
       locationId: 'loc-001'
     };
+
+    const userLocation = PILOT_LOCATIONS[foundUser.locationId] || PILOT_LOCATIONS['loc-001'];
     setCurrentUser(foundUser as UserAccount);
+    setLocation(userLocation);
     setViewMode('dashboard');
   };
 
@@ -211,7 +200,6 @@ export default function SideLineApp() {
     }, 3000);
   };
 
-  // OCR SCAN TRIGGER (ADMIN ONLY)
   const handleCaptureClick = () => fileInputRef.current?.click();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -380,7 +368,6 @@ export default function SideLineApp() {
     setRoItems(prev => prev.filter(i => i.id !== roItem.id));
   };
 
-  // METRICS
   const totalWholesaleValue = inventory.reduce((acc, i) => acc + (i.qty * i.unitCost), 0);
   const totalPartsBilled = roItems.reduce((acc, i) => acc + (i.qtyBilled * i.retailPrice), 0);
   const totalLaborBilled = roItems.reduce((acc, i) => acc + i.laborPrice, 0);
@@ -396,7 +383,6 @@ export default function SideLineApp() {
   const doorRateRealization = location.targetDoorRate > 0 ? ((effectiveLaborRate / location.targetDoorRate) * 100).toFixed(1) : '0.0';
   const isDoorRateFlagged = effectiveLaborRate > 0 && effectiveLaborRate < location.targetDoorRate;
 
-  // LEMON SQUEEZY PURCHASE REDIRECT
   const handlePurchaseLemonSqueezy = (plan: 'monthly' | 'yearly') => {
     const checkoutUrl = plan === 'yearly' 
       ? 'https://sideline.lemonsqueezy.com/checkout/buy/yearly-plan'
@@ -404,9 +390,6 @@ export default function SideLineApp() {
     alert(`Redirecting to Lemon Squeezy Merchant of Record Checkout:\nPlan: ${plan === 'yearly' ? '$99.99/year (Save $20)' : '$9.99/month'}`);
   };
 
-  // -------------------------------------------------------------------
-  // VIEW 1: LANDING / MARKETING PAGE
-  // -------------------------------------------------------------------
   if (viewMode === 'marketing') {
     return (
       <div className="min-h-screen bg-[#070b14] text-slate-100 font-sans flex flex-col justify-between">
@@ -553,9 +536,6 @@ export default function SideLineApp() {
     );
   }
 
-  // -------------------------------------------------------------------
-  // VIEW 2: LOGIN PAGE WITH RANDOMIZED QUOTE ENGINE
-  // -------------------------------------------------------------------
   if (viewMode === 'login') {
     const activeQuote = QUOTES_POOL[currentQuoteIndex];
 
@@ -626,8 +606,14 @@ export default function SideLineApp() {
               </button>
             </form>
 
-            <div className="text-[11px] text-slate-500 text-center">
-              Demo Admin Credentials: <span className="text-cyan-400 font-mono">admin@sidelineauto.com</span>
+            {/* QUICK PRE-CONFIGURED PILOT ACCOUNTS DIRECTORY */}
+            <div className="border-t border-slate-800 pt-4 space-y-2">
+              <span className="text-[10px] text-amber-400 font-bold uppercase tracking-wider block text-center">⚡ Active 60-Day Pilot Accounts</span>
+              <div className="grid grid-cols-3 gap-1.5 text-[10px] text-center font-mono">
+                <button type="button" onClick={() => { setAuthEmail('pilot1@dsadms.com'); setAuthPassword('pilot2026'); }} className="bg-slate-950 hover:bg-slate-800 border border-slate-800 p-1.5 rounded text-cyan-400">Pilot Store 1</button>
+                <button type="button" onClick={() => { setAuthEmail('pilot2@dsadms.com'); setAuthPassword('pilot2026'); }} className="bg-slate-950 hover:bg-slate-800 border border-slate-800 p-1.5 rounded text-cyan-400">Pilot Store 2</button>
+                <button type="button" onClick={() => { setAuthEmail('pilot3@dsadms.com'); setAuthPassword('pilot2026'); }} className="bg-slate-950 hover:bg-slate-800 border border-slate-800 p-1.5 rounded text-cyan-400">Pilot Store 3</button>
+              </div>
             </div>
           </div>
         </main>
@@ -697,9 +683,6 @@ export default function SideLineApp() {
     );
   }
 
-  // -------------------------------------------------------------------
-  // VIEW 3: AUTHENTICATED BACKEND DASHBOARD
-  // -------------------------------------------------------------------
   return (
     <div className="min-h-screen bg-[#070b14] text-slate-100 p-6 font-sans">
       <input type="file" ref={fileInputRef} accept="image/*" onChange={handleFileChange} className="hidden" />
@@ -712,6 +695,11 @@ export default function SideLineApp() {
               DSADMS
             </span>
             <span className="text-slate-500 text-xs font-mono">v1.9.0 Production</span>
+            {location.subscriptionStatus === 'trial_bypass' && (
+              <span className="bg-emerald-950 text-emerald-400 border border-emerald-800 text-[10px] font-mono px-2 py-0.5 rounded font-bold">
+                ⚡ Active 60-Day Pilot Trial
+              </span>
+            )}
           </div>
           <h1 className="text-2xl font-extrabold text-white tracking-tight mt-1">
             SideLine RO & Margin Tracker
