@@ -114,7 +114,7 @@ export default function SideLineApp() {
   };
 
   const [authEmail, setAuthEmail] = useState<string>('shawn@dsaindustriesltd.com');
-  const [authPassword, setAuthPassword] = useState<string>('â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢');
+  const [authPassword, setAuthPassword] = useState<string>('••••••••');
   const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState<boolean>(false);
   const [resetEmail, setResetEmail] = useState<string>('');
   const [resetSentNotice, setResetSentNotice] = useState<string | null>(null);
@@ -417,7 +417,7 @@ export default function SideLineApp() {
               Chemical Products Revenue Leakage Solution
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Stop Losing <span className="text-cyan-400">$3,000â€“$8,000 / Month</span> in Unbilled Off-DMS Specialty Products
+              Stop Losing <span className="text-cyan-400">$3,000-$8,000 / Month</span> in Unbilled Off-DMS Specialty Products
             </h1>
             <p className="text-sm md:text-base text-slate-400 leading-relaxed">
               Chemical products, window tint, ceramic coatings, and third-party accessories slip through primary DMS software every day. SideLine RO uses AI camera OCR to instantly parse vendor invoices, track live inventory, and attach products directly to Repair Orders.
@@ -438,7 +438,7 @@ export default function SideLineApp() {
             <div className="bg-emerald-950/20 border border-emerald-900/50 rounded-2xl p-6 space-y-3">
               <h2 className="text-sm font-bold text-emerald-400 uppercase tracking-wider">ðŸŸ¢ The SideLine RO Solution</h2>
               <ul className="space-y-2 text-xs text-slate-300 list-disc list-inside leading-relaxed">
-                <li>Snap a photo of any distributor packing slip â€”We extract every line item instantly and update your inventory!</li>
+                <li>Snap a photo of any distributor packing slip •”We extract every line item instantly and update your inventory!</li>
                 <li>Price change alerts highlight wholesale shifts so managers can update retail pricing and protect margins.</li>
                 <li>Op Code service bundles combine parts and labor into a single click or drag to active ROs.</li>
                 <li>Auto-ordering calculates replacement needs up to max stock and dispatches Email/SMS orders to vendors.</li>
@@ -475,7 +475,7 @@ export default function SideLineApp() {
 
               <div className="bg-slate-900/90 border-2 border-cyan-500/60 rounded-2xl p-6 flex flex-col justify-between space-y-6 shadow-2xl relative">
                 <span className="absolute -top-3 right-6 bg-cyan-600 text-white text-[10px] font-extrabold px-3 py-0.5 rounded-full uppercase">
-                  Best Value â€¢ Save $20
+                  Best Value • Save $20
                 </span>
                 <div className="space-y-3">
                   <span className="text-xs font-bold text-cyan-400 uppercase">Annual Plan</span>
@@ -500,7 +500,7 @@ export default function SideLineApp() {
         </main>
 
         <footer className="max-w-7xl mx-auto w-full border-t border-slate-800/80 p-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
-          <div>Â© 2026 BELIZE Master HQ â€¢ SideLine RO & Margin Tracker</div>
+          <div>© 2026 BELIZE Master HQ • SideLine RO & Margin Tracker</div>
           <div className="flex gap-4">
             <button onClick={() => setActiveLegalModal('terms')} className="hover:text-cyan-400">Terms of Use</button>
             <button onClick={() => setActiveLegalModal('refund')} className="hover:text-cyan-400">Refund Policy</button>
@@ -560,7 +560,7 @@ export default function SideLineApp() {
               <button onClick={handleNextRandomQuote} className="text-slate-500 hover:text-cyan-400">ðŸŽ² Next Quote</button>
             </div>
             <p className="text-xs italic text-slate-300 leading-relaxed">&quot;{activeQuote.quote}&quot;</p>
-            <p className="text-[11px] text-slate-500 font-bold text-right">â€” {activeQuote.author}</p>
+            <p className="text-[11px] text-slate-500 font-bold text-right">•” {activeQuote.author}</p>
           </div>
 
           <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-8 shadow-2xl space-y-6">
@@ -619,7 +619,7 @@ export default function SideLineApp() {
         </main>
 
         <footer className="max-w-6xl mx-auto w-full text-center text-xs text-slate-500 py-4 flex justify-between items-center border-t border-slate-800/80">
-          <div>Â© 2026 BELIZE Master HQ</div>
+          <div>© 2026 BELIZE Master HQ</div>
           <div className="flex gap-4">
             <button onClick={() => setActiveLegalModal('terms')} className="hover:text-cyan-400">Terms of Use</button>
             <button onClick={() => setActiveLegalModal('refund')} className="hover:text-cyan-400">Refund Policy</button>
@@ -705,7 +705,7 @@ export default function SideLineApp() {
             SideLine RO & Margin Tracker
           </h1>
           <p className="text-xs text-slate-400 mt-0.5">
-            Location: <strong className="text-white">{location.name}</strong> â€¢ Logged in as: <span className="text-cyan-400 font-bold">{currentUser?.name} ({currentUser?.role})</span>
+            Location: <strong className="text-white">{location.name}</strong> • Logged in as: <span className="text-cyan-400 font-bold">{currentUser?.name} ({currentUser?.role})</span>
           </p>
         </div>
 
@@ -1003,7 +1003,7 @@ export default function SideLineApp() {
                   <div key={item.id} className="bg-slate-950 border border-slate-800/80 rounded-lg p-3 flex justify-between items-center">
                     <div>
                       <div className="text-xs font-bold text-white">{item.description}</div>
-                      <div className="text-[10px] text-cyan-400 font-mono mt-0.5">{item.opCode} â€¢ Stock: <span className={item.qty <= item.lowStockThreshold ? 'text-rose-400 font-bold' : 'text-emerald-400 font-bold'}>{item.qty}</span></div>
+                      <div className="text-[10px] text-cyan-400 font-mono mt-0.5">{item.opCode} • Stock: <span className={item.qty <= item.lowStockThreshold ? 'text-rose-400 font-bold' : 'text-emerald-400 font-bold'}>{item.qty}</span></div>
                       <div className="text-[11px] text-emerald-400 font-bold mt-0.5">Parts: ${item.retailPrice.toFixed(2)} | Labor: ${item.stdLaborRate.toFixed(2)}</div>
                     </div>
                     <button disabled={item.qty <= 0} onClick={() => handleAddProductToRO(item)} className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded text-xs font-bold">+ Add</button>
@@ -1055,7 +1055,7 @@ export default function SideLineApp() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="text-sm font-bold text-white">{v.name}</h3>
-                      <p className="text-xs text-slate-400">{v.contactPerson} â€¢ {v.phone}</p>
+                      <p className="text-xs text-slate-400">{v.contactPerson} • {v.phone}</p>
                       <p className="text-xs text-cyan-400 font-mono mt-0.5">{v.email}</p>
                     </div>
                     <div className="flex flex-col items-end gap-2">
