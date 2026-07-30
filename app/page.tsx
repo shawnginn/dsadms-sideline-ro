@@ -410,7 +410,6 @@ export default function SideLineApp() {
   if (viewMode === 'marketing') {
     return (
       <div className="min-h-screen bg-[#070b14] text-slate-100 font-sans flex flex-col justify-between">
-        {/* TOP MARKETING NAVIGATION */}
         <header className="max-w-7xl mx-auto w-full flex justify-between items-center p-6 border-b border-slate-800/80">
           <div className="flex items-center gap-3">
             <span className="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -429,7 +428,6 @@ export default function SideLineApp() {
           </div>
         </header>
 
-        {/* HERO SECTION */}
         <main className="max-w-7xl mx-auto w-full px-6 py-12 space-y-16">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <span className="bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-mono px-3 py-1 rounded-full uppercase">
@@ -443,7 +441,6 @@ export default function SideLineApp() {
             </p>
           </div>
 
-          {/* PAIN VS SOLUTION GRID */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-rose-950/20 border border-rose-900/50 rounded-2xl p-6 space-y-3">
               <h2 className="text-sm font-bold text-rose-400 uppercase tracking-wider">🔴 The Automotive Repair Shop Pain Point</h2>
@@ -466,7 +463,6 @@ export default function SideLineApp() {
             </div>
           </div>
 
-          {/* PRICING CARDS */}
           <div className="space-y-6">
             <div className="text-center">
               <h2 className="text-2xl font-bold text-white">Simple, Transparent Subscription Pricing</h2>
@@ -474,7 +470,6 @@ export default function SideLineApp() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-              {/* MONTHLY PLAN */}
               <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between space-y-6 hover:border-slate-700 transition-all">
                 <div className="space-y-3">
                   <span className="text-xs font-bold text-slate-400 uppercase">Monthly Plan</span>
@@ -495,7 +490,6 @@ export default function SideLineApp() {
                 </button>
               </div>
 
-              {/* YEARLY PLAN */}
               <div className="bg-slate-900/90 border-2 border-cyan-500/60 rounded-2xl p-6 flex flex-col justify-between space-y-6 shadow-2xl relative">
                 <span className="absolute -top-3 right-6 bg-cyan-600 text-white text-[10px] font-extrabold px-3 py-0.5 rounded-full uppercase">
                   Best Value • Save $20
@@ -532,7 +526,6 @@ export default function SideLineApp() {
           </div>
         </footer>
 
-        {/* LEGAL MODAL */}
         {activeLegalModal && (
           <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-md w-full space-y-4 text-xs text-slate-300">
@@ -581,17 +574,15 @@ export default function SideLineApp() {
         </header>
 
         <main className="max-w-md w-full mx-auto space-y-6">
-          {/* RANDOMIZED QUOTE OF THE DAY CARD */}
           <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-5 space-y-2 relative overflow-hidden">
             <div className="flex justify-between items-center text-[10px] text-cyan-400 uppercase font-mono tracking-wider">
               <span>💡 Quote of the Day</span>
               <button onClick={handleNextRandomQuote} className="text-slate-500 hover:text-cyan-400">🎲 Next Quote</button>
             </div>
-            <p className="text-xs italic text-slate-300 leading-relaxed">"{activeQuote.quote}"</p>
+            <p className="text-xs italic text-slate-300 leading-relaxed">&quot;{activeQuote.quote}&quot;</p>
             <p className="text-[11px] text-slate-500 font-bold text-right">— {activeQuote.author}</p>
           </div>
 
-          {/* LOGIN CARD */}
           <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-8 shadow-2xl space-y-6">
             <div>
               <h2 className="text-xl font-bold text-white text-center">Sign In to Dealership Portal</h2>
@@ -650,7 +641,6 @@ export default function SideLineApp() {
           </div>
         </footer>
 
-        {/* PASSWORD RESET MODAL */}
         {isForgotPasswordOpen && (
           <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-sm w-full space-y-4">
@@ -681,7 +671,6 @@ export default function SideLineApp() {
           </div>
         )}
 
-        {/* LEGAL MODAL */}
         {activeLegalModal && (
           <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-md w-full space-y-4 text-xs text-slate-300">
@@ -716,7 +705,6 @@ export default function SideLineApp() {
       <input type="file" ref={fileInputRef} accept="image/*" onChange={handleFileChange} className="hidden" />
       <input type="file" ref={partPhotoInputRef} accept="image/*" onChange={handlePartPhotoUploaded} className="hidden" />
 
-      {/* TOP HEADER & LOGOUT */}
       <header className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center pb-6 mb-6 border-b border-slate-800/80 gap-4">
         <div>
           <div className="flex items-center gap-3">
@@ -733,7 +721,6 @@ export default function SideLineApp() {
           </p>
         </div>
 
-        {/* NAVIGATION & LOGOUT BUTTON */}
         <div className="flex flex-col md:flex-row items-end md:items-center gap-3">
           <button
             onClick={handleLogout}
@@ -759,7 +746,6 @@ export default function SideLineApp() {
         </div>
       </header>
 
-      {/* METRICS DASHBOARD */}
       <section className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
         <div className="bg-slate-900/60 border border-slate-800/80 rounded-xl p-5">
           <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">Total Combined Billed</span>
@@ -791,7 +777,6 @@ export default function SideLineApp() {
         </div>
       </section>
 
-      {/* TAB 1: OVERVIEW */}
       {activeTab === 'overview' && (
         <main className="max-w-7xl mx-auto space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -856,7 +841,6 @@ export default function SideLineApp() {
               </div>
             </div>
 
-            {/* USER MANAGEMENT (ADMIN ONLY ADDING) */}
             <div className="lg:col-span-1 bg-slate-900/60 border border-slate-800/80 rounded-xl p-6">
               <h2 className="text-sm font-bold text-white uppercase tracking-wider mb-4">👥 Dealership User Accounts</h2>
               
@@ -889,7 +873,6 @@ export default function SideLineApp() {
         </main>
       )}
 
-      {/* TAB 2: RECEIVING SECTION */}
       {activeTab === 'receiving' && (
         <main className="max-w-7xl mx-auto space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -942,7 +925,6 @@ export default function SideLineApp() {
               )}
             </div>
 
-            {/* MASTER INVENTORY TABLE */}
             <div className="lg:col-span-2 bg-slate-900/60 border border-slate-800/80 rounded-xl p-6">
               <h2 className="text-sm font-bold text-white uppercase tracking-wider mb-2">📦 Master Inventory & Op Code Configuration</h2>
               <div className="border border-slate-800 rounded-lg overflow-x-auto bg-slate-950/50">
@@ -1023,7 +1005,6 @@ export default function SideLineApp() {
         </main>
       )}
 
-      {/* TAB 3: SALES */}
       {activeTab === 'sales' && (
         <main className="max-w-7xl mx-auto space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -1076,7 +1057,6 @@ export default function SideLineApp() {
         </main>
       )}
 
-      {/* TAB 4: VENDORS */}
       {activeTab === 'vendors' && (
         <main className="max-w-7xl mx-auto space-y-8">
           <div className="bg-slate-900/60 border border-slate-800/80 rounded-xl p-6">
@@ -1110,7 +1090,6 @@ export default function SideLineApp() {
         </main>
       )}
 
-      {/* EDIT SPECS MODAL */}
       {editingItem && (
         <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-lg w-full space-y-4">
@@ -1137,7 +1116,6 @@ export default function SideLineApp() {
         </div>
       )}
 
-      {/* EDIT VENDOR MODAL */}
       {editingVendor && (
         <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-md w-full space-y-4">
@@ -1161,7 +1139,6 @@ export default function SideLineApp() {
         </div>
       )}
 
-      {/* RECTIFY STOCK MODAL (ADMIN GUARDED) */}
       {rectifyingItem && isAdmin && (
         <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-md w-full space-y-4">
@@ -1184,7 +1161,6 @@ export default function SideLineApp() {
         </div>
       )}
 
-      {/* VENDOR DIGEST MODAL */}
       {vendorOrderDigest && (
         <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-slate-900 border border-amber-500/40 rounded-xl p-6 max-w-xl w-full space-y-4">

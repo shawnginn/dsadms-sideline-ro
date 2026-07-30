@@ -22,3 +22,4 @@ yarn-error.log*
 
 # Local Database & Cache
 .vercel
+.vercel
