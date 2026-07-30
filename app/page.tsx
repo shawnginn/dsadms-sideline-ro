@@ -1,3 +1,4 @@
+// UTF8 Clean Build v1.0.2 - 1785452941196
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -459,10 +460,10 @@ export default function SideLineApp() {
                   <div className="text-3xl font-extrabold text-white">$9.99 <span className="text-xs font-normal text-slate-400">/ month</span></div>
                   <p className="text-xs text-slate-400">Flexible month-to-month subscription. Cancel anytime.</p>
                   <ul className="text-xs text-slate-300 space-y-1.5 pt-2 border-t border-slate-800">
-                    <li>âœ“ Unlimited Camera Scans</li>
-                    <li>âœ“ Unlimited Users & Advisor Access</li>
-                    <li>âœ“ Price Change Protection & Door Rate Flags</li>
-                    <li>âœ“ Vendor Auto-Ordering via Email & SMS</li>
+                    <li>•“ Unlimited Camera Scans</li>
+                    <li>•“ Unlimited Users & Advisor Access</li>
+                    <li>•“ Price Change Protection & Door Rate Flags</li>
+                    <li>•“ Vendor Auto-Ordering via Email & SMS</li>
                   </ul>
                 </div>
                 <button
@@ -482,10 +483,10 @@ export default function SideLineApp() {
                   <div className="text-3xl font-extrabold text-white">$99.99 <span className="text-xs font-normal text-slate-400">/ year</span></div>
                   <p className="text-xs text-cyan-400">Includes 2 months free ($8.33/mo effective).</p>
                   <ul className="text-xs text-slate-300 space-y-1.5 pt-2 border-t border-slate-800">
-                    <li>âœ“ Everything in Monthly Plan</li>
-                    <li>âœ“ Priority Vision Processing</li>
-                    <li>âœ“ Dedicated Dealership Account Onboarding</li>
-                    <li>âœ“ Multi-Location Audit Logs</li>
+                    <li>•“ Everything in Monthly Plan</li>
+                    <li>•“ Priority Vision Processing</li>
+                    <li>•“ Dedicated Dealership Account Onboarding</li>
+                    <li>•“ Multi-Location Audit Logs</li>
                   </ul>
                 </div>
                 <button
@@ -975,7 +976,7 @@ export default function SideLineApp() {
                           </td>
                           <td className="p-2 text-center whitespace-nowrap">
                             <div className="flex items-center justify-center gap-1.5">
-                              <button onClick={() => setEditingItem(item)} className="bg-slate-800 hover:bg-slate-700 text-cyan-400 text-[10px] px-2 py-1 rounded border border-slate-700 whitespace-nowrap">âœï¸ Specs</button>
+                              <button onClick={() => setEditingItem(item)} className="bg-slate-800 hover:bg-slate-700 text-cyan-400 text-[10px] px-2 py-1 rounded border border-slate-700 whitespace-nowrap">•ï¸ Specs</button>
                               {isAdmin && (
                                 <button onClick={() => { setRectifyingItem(item); setRectifyCount(item.qty); }} className="bg-slate-800 hover:bg-slate-700 text-amber-400 text-[10px] px-2 py-1 rounded border border-slate-700 whitespace-nowrap">âš–ï¸ Audit</button>
                               )}
@@ -1031,7 +1032,7 @@ export default function SideLineApp() {
                         <td className="p-2.5 text-right text-emerald-400">${(item.retailPrice * item.qtyBilled).toFixed(2)}</td>
                         <td className="p-2.5 text-right text-slate-200">${item.laborPrice.toFixed(2)}</td>
                         <td className="p-2.5 text-right text-cyan-400">${((item.retailPrice * item.qtyBilled + item.laborPrice) - (item.unitCost * item.qtyBilled)).toFixed(2)}</td>
-                        <td className="p-2.5 text-center"><button onClick={() => handleRemoveFromRO(item)} className="text-rose-400 font-bold">âœ•</button></td>
+                        <td className="p-2.5 text-center"><button onClick={() => handleRemoveFromRO(item)} className="text-rose-400 font-bold">••</button></td>
                       </tr>
                     ))}
                   </tbody>
@@ -1060,7 +1061,7 @@ export default function SideLineApp() {
                     </div>
                     <div className="flex flex-col items-end gap-2">
                       <button onClick={() => setEditingVendor(v)} className="bg-slate-800 text-cyan-400 border border-slate-700 text-[10px] px-2.5 py-1 rounded">
-                        âœï¸ Edit Contact Info
+                        •ï¸ Edit Contact Info
                       </button>
                       <span className={`text-[10px] px-2 py-0.5 rounded font-mono font-bold ${v.orderMethod === 'SMS' ? 'bg-amber-950 text-amber-400 border border-amber-800' : 'bg-cyan-950 text-cyan-400 border border-cyan-800'}`}>
                         Method: {v.orderMethod}
@@ -1081,7 +1082,7 @@ export default function SideLineApp() {
       {editingItem && (
         <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-lg w-full space-y-4">
-            <h3 className="text-sm font-bold text-white uppercase">âœï¸ Edit Product Specs</h3>
+            <h3 className="text-sm font-bold text-white uppercase">•ï¸ Edit Product Specs</h3>
             <div className="grid grid-cols-2 gap-3">
               <div><label className="text-xs text-slate-400">Op Code</label><input type="text" value={editingItem.opCode} onChange={(e) => setEditingItem({ ...editingItem, opCode: e.target.value })} className="w-full bg-slate-950 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-white" /></div>
               <div><label className="text-xs text-slate-400">Part Number</label><input type="text" value={editingItem.pn} onChange={(e) => setEditingItem({ ...editingItem, pn: e.target.value })} className="w-full bg-slate-950 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-white" /></div>
@@ -1107,7 +1108,7 @@ export default function SideLineApp() {
       {editingVendor && (
         <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 z-50">
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 max-w-md w-full space-y-4">
-            <h3 className="text-sm font-bold text-white uppercase">âœï¸ Edit Vendor Contact Specs</h3>
+            <h3 className="text-sm font-bold text-white uppercase">•ï¸ Edit Vendor Contact Specs</h3>
             <div><label className="text-xs text-slate-400">Vendor Name</label><input type="text" value={editingVendor.name} onChange={(e) => setEditingVendor({ ...editingVendor, name: e.target.value })} className="w-full bg-slate-950 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-white" /></div>
             <div><label className="text-xs text-slate-400">Contact Rep Person</label><input type="text" value={editingVendor.contactPerson} onChange={(e) => setEditingVendor({ ...editingVendor, contactPerson: e.target.value })} className="w-full bg-slate-950 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-white" /></div>
             <div><label className="text-xs text-slate-400">Email Address</label><input type="email" value={editingVendor.email} onChange={(e) => setEditingVendor({ ...editingVendor, email: e.target.value })} className="w-full bg-slate-950 border border-slate-800 rounded px-2.5 py-1.5 text-xs text-white" /></div>
