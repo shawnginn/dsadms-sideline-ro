@@ -1,4 +1,6 @@
-﻿'use client';
+﻿export const dynamic = 'force-dynamic';
+
+'use client';
 
 import { useState, useRef, useEffect } from 'react';
 
@@ -1181,3 +1183,4 @@ export default function SideLineApp() {
     </div>
   );
 }
+
