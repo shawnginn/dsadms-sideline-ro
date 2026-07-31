@@ -92,7 +92,7 @@ export default function WorkspacePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-4">
             <div className="text-xs text-slate-400 font-medium">Unbilled Revenue Recovered</div>
-            <div className="text-2xl font-black text-cyan-400 mt-1">,480.00</div>
+            <div className="text-2xl font-black text-cyan-400 mt-1">$6,480.00</div>
             <div className="text-[11px] text-emerald-400 mt-1 font-mono">+18% this month</div>
           </div>
           <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-4">
@@ -116,13 +116,21 @@ export default function WorkspacePage() {
         <div className="flex space-x-2 border-b border-slate-800 pb-2">
           <button
             onClick={() => setActiveTab('ocr')}
-            className={px-4 py-2 rounded-lg text-xs font-bold transition-all }
+            className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+              activeTab === 'ocr'
+                ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+            }`}
           >
             AI Camera OCR Ingest
           </button>
           <button
             onClick={() => setActiveTab('inventory')}
-            className={px-4 py-2 rounded-lg text-xs font-bold transition-all }
+            className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+              activeTab === 'inventory'
+                ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+            }`}
           >
             Specialty Chemical Inventory ({scannedItems.length})
           </button>
@@ -171,7 +179,7 @@ export default function WorkspacePage() {
                       </div>
                       <div>
                         <div className="text-slate-400 text-[10px]">Cost / Retail</div>
-                        <div className="text-cyan-400 font-bold"> / </div>
+                        <div className="text-cyan-400 font-bold">${item.cost.toFixed(2)} / ${item.retail.toFixed(2)}</div>
                       </div>
                     </div>
                   </div>
@@ -201,8 +209,8 @@ export default function WorkspacePage() {
                     <td className="p-4 text-cyan-400 font-bold">{item.id}</td>
                     <td className="p-4 font-sans text-white font-medium">{item.name}</td>
                     <td className="p-4 text-slate-300">{item.opcode}</td>
-                    <td className="p-4 text-slate-400"></td>
-                    <td className="p-4 text-emerald-400 font-bold"></td>
+                    <td className="p-4 text-slate-400">${item.cost.toFixed(2)}</td>
+                    <td className="p-4 text-emerald-400 font-bold">${item.retail.toFixed(2)}</td>
                     <td className="p-4 text-white font-bold">{item.qty} in stock</td>
                   </tr>
                 ))}
