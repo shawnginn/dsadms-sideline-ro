@@ -1,7 +1,18 @@
-﻿import Script from 'next/script';
-import React from 'react';
+'use client';
+import Script from 'next/script';
+import React, { useState, useEffect } from 'react';
 
 export default function SideLineROLanding() {
+  const [session, setSession] = useState<{ email: string; name: string; role: string } | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('sideline_ro_session_v1');
+      if (saved) {
+        try { setSession(JSON.parse(saved)); } catch (e) { setSession(null); }
+      }
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-[#07090e] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black">
       {/* Top Navigation */}
@@ -11,12 +22,30 @@ export default function SideLineROLanding() {
           <span className="text-slate-600">|</span>
           <span className="text-white font-bold text-lg">SideLine RO</span>
         </div>
-        <a 
-          href="/login"
-          className="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-5 py-2 rounded-lg transition-all duration-200 shadow-lg shadow-cyan-500/20"
-        >
-          Sign In
-        </a>
+        {session ? (
+          <div className="flex items-center space-x-4">
+            <div className="text-right">
+              <div className="text-sm font-bold text-white">{session.name}</div>
+              <div className="text-xs text-cyan-400 uppercase font-mono">{session.role}</div>
+            </div>
+            <button
+              onClick={() => {
+                localStorage.removeItem('sideline_ro_session_v1');
+                setSession(null);
+              }}
+              className="bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold px-4 py-2 rounded-lg border border-slate-700 text-sm transition-all"
+            >
+              Sign Out
+            </button>
+          </div>
+        ) : (
+          <a
+            href="/login"
+            className="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-5 py-2 rounded-lg transition-all duration-200 shadow-lg shadow-cyan-500/20"
+          >
+            Sign In
+          </a>
+        )}
       </nav>
 
       {/* Hero Section */}

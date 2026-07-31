@@ -1,13 +1,20 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault()
-    alert('Signing in with: ' + email)
+    const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    const userSession = {
+      email: email,
+      name: 'Shawn Ginn',
+      role: 'admin',
+      loggedInAt: new Date().toISOString()
+    };
+    localStorage.setItem('sideline_ro_session_v1', JSON.stringify(userSession));
+    window.location.href = '/';
   }
 
   return (
