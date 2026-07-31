@@ -41,7 +41,7 @@ export default function SideLineROLanding() {
         {/* Pain Point Card */}
         <div className="bg-rose-950/20 border border-rose-900/40 rounded-2xl p-8 backdrop-blur-sm">
           <h2 className="text-sm font-bold text-rose-400 uppercase tracking-wider mb-6 flex items-center space-x-2">
-            <span>??</span>
+            <span></span>
             <span>THE AUTOMOTIVE REPAIR SHOP PAIN POINT</span>
           </h2>
           <ul className="space-y-4 text-slate-300">
@@ -67,7 +67,7 @@ export default function SideLineROLanding() {
         {/* Solution Card */}
         <div className="bg-emerald-950/20 border border-emerald-900/40 rounded-2xl p-8 backdrop-blur-sm">
           <h2 className="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-6 flex items-center space-x-2">
-            <span>??</span>
+            <span></span>
             <span>THE SIDELINE RO SOLUTION</span>
           </h2>
           <ul className="space-y-4 text-slate-300">
@@ -177,5 +177,6 @@ export default function SideLineROLanding() {
     </div>
   );
 }
+
 
 
