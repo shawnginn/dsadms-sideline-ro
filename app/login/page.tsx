@@ -14,7 +14,7 @@ export default function LoginPage() {
       loggedInAt: new Date().toISOString()
     };
     localStorage.setItem('sideline_ro_session_v1', JSON.stringify(userSession));
-    window.location.href = '/';
+    window.location.href = '/workspace';
   }
 
   return (
