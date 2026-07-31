@@ -34,7 +34,7 @@ export default function LoginPage() {
               type="email" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="shawn@dsaindustriesltd.com"
+              placeholder="youremail@company.com"
               className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500"
               required 
             />
@@ -45,7 +45,7 @@ export default function LoginPage() {
               type="password" 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
+              placeholder=""
               className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500"
               required 
             />
