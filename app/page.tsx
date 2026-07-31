@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import React from 'react';
 
 export default function SideLineROLanding() {
@@ -125,9 +126,9 @@ export default function SideLineROLanding() {
                 </li>
               </ul>
             </div>
-            <button className="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-lg transition-colors">
+            <a href={process.env.NEXT_PUBLIC_LEMON_MONTHLY_URL || "#"} className="lemonsqueezy-button block text-center w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-lg transition-colors">
               Subscribe Monthly ($9.99/mo)
-            </button>
+            </a>
           </div>
 
           {/* Annual Plan */}
@@ -162,9 +163,9 @@ export default function SideLineROLanding() {
                 </li>
               </ul>
             </div>
-            <button className="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-3 rounded-lg transition-colors shadow-lg shadow-cyan-500/20">
+            <a href={process.env.NEXT_PUBLIC_LEMON_ANNUAL_URL || "#"} className="lemonsqueezy-button block text-center w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-3 rounded-lg transition-colors shadow-lg shadow-cyan-500/20">
               Subscribe Annual ($99.99/yr)
-            </button>
+            </a>
           </div>
         </div>
       </section>
