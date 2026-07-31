@@ -1,4 +1,4 @@
-import Script from 'next/script';
+﻿import Script from 'next/script';
 import React from 'react';
 
 export default function SideLineROLanding() {
@@ -7,7 +7,7 @@ export default function SideLineROLanding() {
       {/* Top Navigation */}
       <nav className="border-b border-slate-800/80 bg-[#07090e]/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4 flex items-center justify-between max-w-7xl mx-auto">
         <div className="flex items-center space-x-3">
-          <span className="text-cyan-400 font-extrabold text-xl tracking-wider">DSADMS</span>
+          <span className="text-cyan-400 font-extrabold text-xl tracking-wider">DSAapps</span>
           <span className="text-slate-600">|</span>
           <span className="text-white font-bold text-lg">SideLine RO</span>
         </div>
@@ -172,9 +172,10 @@ export default function SideLineROLanding() {
 
       {/* Footer */}
       <footer className="border-t border-slate-800/80 mt-20 py-8 text-center text-xs text-slate-500">
-        <p>- 2026 BELIZE AI Ecosystem - DSADMS SideLine RO. All rights reserved.</p>
+        <p>- 2026 BELIZE AI Ecosystem - DSAapps SideLine RO. All rights reserved.</p>
       </footer>
     </div>
   );
 }
+
 
